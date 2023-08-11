@@ -2,12 +2,12 @@
   "name": "cypress-snippets-helper",
   "displayName": "cypress-snippets-helper",
   "description": "Cypress code fragment extension for vscode",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "icon": "./assest/cy.logo.webp",
   "author": "inblossoms",
   "publisher": "inblossoms",
   "engines": {
-    "vscode": "^1.81.0"
+    "vscode": "^1.7.0"
   },
   "categories": [
     "Snippets"
