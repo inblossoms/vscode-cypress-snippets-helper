@@ -1,0 +1,182 @@
+{
+	"basic test components": {
+		"prefix": "cpr",
+		"body": [
+			"describe(\"\", () => {",
+			"  before(() => {",
+			"    // runs once before all tests",
+			"    cy.fixture('example').then((signInData) => {",
+			"         this.signInData = signInData",
+			"    })",
+			"  });",
+			"  beforeEach(() => {",
+			"    // runs before every it() test block",
+			"  });",
+			"  afterEach(() => {",
+			"    // runs after every it() test block",
+			"  });",
+			"  after(() => {",
+			"    // runs once after all tests",
+			"  });",
+			"  context(\"This is your test suite title\", () => {",
+			"    // -- Start: Cypress Tests --",
+			"    it(\"This is your test case one title\", () => {",
+			"      // Write your test case one here",
+			"    });",
+			"  });",
+			"});",
+			""
+		],
+		"description": "basic test components"
+	},
+	"cy describe": {
+		"prefix": "cdr",
+		"body": [
+			"describe(\"\", () => {",
+			"  it('', function (){});",
+			"",
+			"  context(\"\", () => {",
+			"    it(\"\", () => {});",
+			"  });",
+			"});",
+			""
+		],
+		"description": "Test Suite Template"
+	},
+	"cy context": {
+		"prefix": "ctx",
+		"body": [
+			"context('', () => {",
+			"  it(\"\", () => {})",
+			"});"
+		],
+		"description": "Test context block"
+	},
+	"cy hooks": {
+		"prefix": "chk",
+		"body": [
+			"${1|before,beforeEach,after,afterEach|}(() => {",
+			"    $0",
+			"});"
+		],
+		"description": "Life cycle hooks"
+	},
+	"cy visit": {
+		"prefix": "cvt",
+		"body": [
+			"cy.visit('$1');$0"
+		],
+		"description": "Expects the page to show the content with 200 status code. "
+	},
+	"cy it": {
+		"prefix": "cit",
+		"body": [
+			"it('$2', () => {",
+			"    $0",
+			"});"
+		],
+		"description": "test case"
+	},
+	"cy viewport": {
+		"prefix": "cvi",
+		"body": "cy.viewport($1, $2);",
+		"description": "Control the size and orientation of the screen for your application."
+	},
+	"cy implicit assertion": {
+		"prefix": "cia",
+		"body": [
+			"cy.get(\"${1:#root}\")",
+			"  .${2|find,should|}('$3')",
+			"  .${4|should,and|}('$5', $6)",
+			"  .${7|and,click,type|}('$8');",
+			""
+		],
+		"description": "Implicit assertion"
+	},
+	"cy display assertion": {
+		"prefix": "cdi",
+		"body": [
+			"cy.get()",
+			"  .${1|click,should,find,select,check,type|}($2)",
+			"  .${3|should,click,find,select,check,type|}(() => {",
+			"    expect($4).to.eq($5)",
+			"  })",
+			"$0"
+		],
+		"description": "display assertion"
+	},
+	"cy yielded subject": {
+		"prefix": "cyy",
+		"body": [
+			"${1|its,invoke|}('$2');",
+			"$0"
+		],
+		"description": "Get a property's value or function on the previously yielded subject."
+	},
+	"cy input type event": {
+		"prefix": "cipt",
+		"body": [
+			"${1|check,focus,select,uncheck,type,selectFile|}('$2');",
+			"$0"
+		],
+		"description": "Provides input box related event instructions"
+	},
+	"cy mouse actions": {
+		"prefix": "cma",
+		"body": [
+			"${1|click,focus,clear,trigger,dblclick,rightclick,scrollIntoView,scrollTo|}('$2');",
+			"$0"
+		],
+		"description": "Mouse-related events"
+	},
+	"cy cookies": {
+		"prefix": "cki",
+		"body": [
+			"cy.${1|getCookie,setCookie,getCookies,getAllCookies,clearCookie,clearCookies,clearAllCookies|}('$2');",
+			"$0"
+		],
+		"description": "Cookies-related events"
+	},
+	"cy storage": {
+		"prefix": "cks",
+		"body": [
+			"cy.${1|getAllLocalStorage,clearLocalStorage,clearAllLocalStorage,getAllSessionStorage,clearAllSessionStorage|}('$2');",
+			"$0"
+		],
+		"description": "Storage-related events"
+	},
+	"Make an HTTP request.": {
+		"prefix": "creq",
+		"body": [
+			" cy.request(\"${1|GET,POST,PUT,DETET|}\", \"${2:url}\", {",
+			"      }).then((res) => {",
+			"         expect(res.status).to.eq(200)",
+			"         expect(res).to.have.property('headers')",
+			"         expect(res).to.have.property('duration')",
+			"         $0",
+			"      });"
+		],
+		"description": "Make an HTTP request."
+	},
+	"Interception of requests": {
+		"prefix": "cior",
+		"body": [
+			"cy.intercept('${1|GET,POST,PUT,DELETE|}', '${2:/api/users}', { ${3: fixture: 'users.json'} })",
+			"  .as('${4:alias}')",
+			"  .wait('${5:@alias}').then((interception) => {",
+			"      const users = interception.response.body",
+			"  })",
+			"${0}"
+		],
+		"description": "Interception of requests"
+	},
+	"Queries the DOM": {
+		"prefix": "cqd",
+		"body": [
+			"cy.get(\"${1:#root}\")",
+			"  .${2|should,and,contains|}(\"$3\", $4)",
+			"  .${5|type,click,should,and,contains,as,its,invoke|}(\"$6\")$0"
+		],
+		"description": "Queries the DOM"
+	}
+}
