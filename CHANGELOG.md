@@ -4,6 +4,12 @@ All notable changes to the "cypress-snippets-helper" extension will be documente
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## 1.0.2 - 2023/08/12
+
+### Fix Ts type support
+
+- The instruction does not support the problem in Ts type files
+
 ## 1.0.1 - 2023/08/11
 
 ### Version degradation

@@ -2,7 +2,7 @@
   "name": "cypress-snippets-helper",
   "displayName": "cypress-snippets-helper",
   "description": "Cypress code fragment extension for vscode",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "icon": "./assest/cy.logo.webp",
   "author": "inblossoms",
   "publisher": "inblossoms",
@@ -17,6 +17,10 @@
       {
         "language": "javascript",
         "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets.code-snippets"
       }
     ]
   },
@@ -24,5 +28,12 @@
     "type": "git",
     "url": "https://github.com/inblossoms/vscode-cypress-snippets-helper.git"
   },
+  "keywords": [
+    "cypress",
+    "test",
+    "e2e",
+    "E2E testing",
+    "Automation Testing"
+  ],
   "license": "MIT"
 }
