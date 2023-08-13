@@ -53,7 +53,7 @@ This instruction provides snippets of common element query operations
 
 ![](./assest/cqd.gif)
 
-### 2. Interception of requests
+### 3. Interception of requests
 
 This directive provides a snippet of code that intercepts an HTTP request
 
